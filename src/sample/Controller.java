@@ -43,14 +43,26 @@ public class Controller {
     public Boolean first = true;
     public Label inputLabel;
     public Label outputLabel;
+    public Button targetOperator;
     public int inputBase;
     public int outputBase;
+    public String firstNumber;
+    public int firstBase;
+    public String operator = "0";
+    public Label tracker;
+    public Boolean negative = false;
+    public Button sign;
+    public Button plus;
+    public Button minus;
+    public Button times;
+    public Button division;
+    public Label operatorLabel;
 
 
 
 
 
-    public void clickNumber(ActionEvent e) throws IOException{
+    public void clickNumber(ActionEvent e){
         targetNumber= (Button) e.getTarget();
         if(first == true){
             first = false;
@@ -124,6 +136,21 @@ public class Controller {
     }
 
     public void disable(ActionEvent e){
+        screen.setText("0");
+        first = true;
+        decimalPicked = false;
+        number = "0";
+        one.setDisable(false);
+        zero.setDisable(false);
+        decimal.setDisable(false);
+        plus.setDisable(false);
+        times.setDisable(false);
+        sign.setDisable(false);
+        minus.setDisable(false);
+        division.setDisable(false);
+        equals.setDisable(false);
+        firstBase = inputBase;
+
         if(input.getValue().equals("Base 2")) {
 
             two.setDisable(true);
@@ -371,36 +398,83 @@ public class Controller {
 
     }
 
+    public void initOutput(ActionEvent e){
+        if(output.getValue().equals("Base 2")) {
+            outputBase = 2;
+        } else if(output.getValue().equals("Base 3")) {
+            outputBase = 3;
+        } else if(output.getValue().equals("Base 4")) {
+            outputBase = 4;
+        } else if(output.getValue().equals("Base 5")) {
+            outputBase = 5;
+        } else if(output.getValue().equals("Base 6")) {
+            outputBase = 6;
+        } else if(output.getValue().equals("Base 7")) {
+            outputBase = 7;
+        } else if(output.getValue().equals("Base 8")) {
+            outputBase = 8;
+        } else if(output.getValue().equals("Base 9")) {
+            outputBase = 9;
+        } else if(output.getValue().equals("Base 10")) {
+            outputBase = 10;
+        } else if(input.getValue().equals("Base 11")) {
+            outputBase = 11;
+        } else if(output.getValue().equals("Base 12")) {
+            outputBase = 12;
+        } else if(output.getValue().equals("Base 13")) {
+            outputBase = 13;
+        } else if(output.getValue().equals("Base 14")) {
+            outputBase = 14;
+        } else if(output.getValue().equals("Base 15")) {
+            outputBase = 15;
+        } else if(output.getValue().equals("Base 16")) {
+            outputBase = 16;
+        }
 
-    public void clear(ActionEvent e){
-        screen.setText("0");
-        first = true;
-        number = "0";
+
+
     }
 
 
+    public void operate(ActionEvent e){
+        targetOperator= (Button) e.getTarget();
+        operator = targetOperator.getText();
+        firstNumber = number;
+        String curNumber = "(" + number + ")BASE" + inputBase;
+        operatorLabel.setText(operator);
+        tracker.setText(curNumber);
+        screen.setText("0");
+        first = true;
+        decimalPicked = false;
+        number = "0";
+    }
+
+    public void equals(){
+        
+    }
 
 
-//    public void play(ActionEvent e) throws IOException {
-//        if(targetCheck == null){
-//            return;
-//        }
-//        else if(targetCheck.isSelected() && targetCheck.equals(check1)){
-//            stage = (Stage) check1.getScene().getWindow();
-//            GridPane root = FXMLLoader.load(getClass().getResource("OnePlayer.fxml"));
-//            Scene scene = new Scene(root, 300, 275);
-//            stage.setScene(scene);
-//        }else if(targetCheck.isSelected() && targetCheck.equals(check2)){
-//            stage = (Stage) check1.getScene().getWindow();
-//            GridPane root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-//            Scene scene = new Scene(root, 300, 275);
-//            stage.setScene(scene);
-//        }
-//        else{
-//            return;
-//        }
-//
-//    }
+    public void clear(){
+        screen.setText("0");
+        first = true;
+        decimalPicked = false;
+        number = "0";
+        tracker.setText(" ");
+    }
+
+    public void makeNegative(ActionEvent e){
+        if(negative){
+            number = number.substring(1);
+            screen.setText(number);
+            negative = false;
+        }
+        else{
+            number = "-" + number;
+            screen.setText(number);
+            negative = true;
+        }
+    }
+
 
 
 }
