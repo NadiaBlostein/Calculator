@@ -51,12 +51,15 @@ public class Controller {
     public String operator = "0";
     public Label tracker;
     public Boolean negative = false;
+    public Boolean firstSign;
     public Button sign;
     public Button plus;
     public Button minus;
     public Button times;
     public Button division;
     public Label operatorLabel;
+    public Label secondTracker;
+
 
 
 
@@ -135,10 +138,11 @@ public class Controller {
 
     }
 
-    public void disable(ActionEvent e){
+    public void disable(){
         screen.setText("0");
         first = true;
         decimalPicked = false;
+        negative = false;
         number = "0";
         one.setDisable(false);
         zero.setDisable(false);
@@ -148,8 +152,8 @@ public class Controller {
         sign.setDisable(false);
         minus.setDisable(false);
         division.setDisable(false);
-        equals.setDisable(false);
         firstBase = inputBase;
+        clear.setDisable(false);
 
         if(input.getValue().equals("Base 2")) {
 
@@ -399,6 +403,7 @@ public class Controller {
     }
 
     public void initOutput(ActionEvent e){
+        equals.setDisable(false);
         if(output.getValue().equals("Base 2")) {
             outputBase = 2;
         } else if(output.getValue().equals("Base 3")) {
@@ -433,10 +438,16 @@ public class Controller {
 
 
 
+
+
     }
 
 
     public void operate(ActionEvent e){
+        plus.setDisable(true);
+        minus.setDisable(true);
+        times.setDisable(true);
+        division.setDisable(true);
         targetOperator= (Button) e.getTarget();
         operator = targetOperator.getText();
         firstNumber = number;
@@ -447,10 +458,36 @@ public class Controller {
         first = true;
         decimalPicked = false;
         number = "0";
+        firstSign = negative;
+        negative = false;
     }
 
     public void equals(){
-        
+        String curNumber = "(" + number + ")BASE" + inputBase;
+        secondTracker.setText(curNumber);
+        one.setDisable(true);
+        two.setDisable(true);
+        three.setDisable(true);
+        four.setDisable(true);
+        five.setDisable(true);
+        six.setDisable(true);
+        seven.setDisable(true);
+        eight.setDisable(true);
+        nine.setDisable(true);
+        ten.setDisable(true);
+        eleven.setDisable(true);
+        twelve.setDisable(true);
+        thirteen.setDisable(true);
+        fourteen.setDisable(true);
+        fifteen.setDisable(true);
+        zero.setDisable(true);
+        decimal.setDisable(true);
+        sign.setDisable(true);
+        plus.setDisable(true);
+        minus.setDisable(true);
+        times.setDisable(true);
+        division.setDisable(true);
+
     }
 
 
@@ -460,6 +497,12 @@ public class Controller {
         decimalPicked = false;
         number = "0";
         tracker.setText(" ");
+        operatorLabel.setText(" ");
+        secondTracker.setText(" ");
+        negative = false;
+        firstSign = false;
+        disable();
+
     }
 
     public void makeNegative(ActionEvent e){

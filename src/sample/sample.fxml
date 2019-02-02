@@ -149,8 +149,9 @@
 
         <GridPane gridLinesVisible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
 
-            <Label fx:id="tracker" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="0"> </Label>
+            <Label fx:id="tracker" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="0"> </Label>
             <Label fx:id="operatorLabel" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="1"> </Label>
+            <Label fx:id="secondTracker" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1"> </Label>
             <columnConstraints>
                 <ColumnConstraints />
                 <ColumnConstraints />
@@ -172,7 +173,7 @@
         </GridPane>
 
 
-        <Button fx:id="clear" mnemonicParsing="false" onAction="#clear" text="clear" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Button fx:id="clear" disable="true" mnemonicParsing="false" onAction="#clear" text="clear" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
 
 
