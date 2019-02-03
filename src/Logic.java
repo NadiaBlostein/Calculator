@@ -1,9 +1,5 @@
 
 public class Logic {
-   public double firstNumberDec;
-   public double secondNumberDec;
-   public String answer;
-   public double numAnswer;
 
 
 

@@ -50,7 +50,7 @@ public class Controller {
     public String operator = "0";
     public Label tracker;
     public Boolean negative = false;
-    public Boolean firstSign;
+    public Boolean firstSign = false;
     public Button sign;
     public Button plus;
     public Button minus;
@@ -76,29 +76,38 @@ public class Controller {
         if(targetNumber.equals(one)){
             number = number + 1 + "";
             screen.setText(number);
+            sign.setDisable(false);
         } else if (targetNumber.equals(two)) {
             number = number + 2 + "";
+            sign.setDisable(false);
             screen.setText(number);
         } else if (targetNumber.equals(three)) {
             number = number + 3 + "";
+            sign.setDisable(false);
             screen.setText(number);
         } else if (targetNumber.equals(four)) {
             number = number + 4 + "";
+            sign.setDisable(false);
             screen.setText(number);
         } else if (targetNumber.equals(five)) {
             number = number + 5 + "";
+            sign.setDisable(false);
             screen.setText(number);
         } else if (targetNumber.equals(six)) {
             number = number + 6 + "";
+            sign.setDisable(false);
             screen.setText(number);
         } else if (targetNumber.equals(seven)) {
             number = number + 7 + "";
+            sign.setDisable(false);
             screen.setText(number);
         } else if (targetNumber.equals(eight)) {
             number = number + 8 + "";
+            sign.setDisable(false);
             screen.setText(number);
         } else if (targetNumber.equals(nine)) {
             number = number + 9 + "";
+            sign.setDisable(false);
             screen.setText(number);
         } else if (targetNumber.equals(zero)) {
             if(number.length() == 0){
@@ -111,22 +120,28 @@ public class Controller {
             }
         } else if (targetNumber.equals(ten)) {
             number = number + "A";
+            sign.setDisable(false);
             screen.setText(number);
         } else if (targetNumber.equals(eleven)) {
             number = number + "B";
             screen.setText(number);
+            sign.setDisable(false);
         } else if (targetNumber.equals(twelve)) {
             number = number + "C";
             screen.setText(number);
+            sign.setDisable(false);
         } else if (targetNumber.equals(thirteen)) {
             number = number + "D";
             screen.setText(number);
+            sign.setDisable(false);
         } else if (targetNumber.equals(fourteen)) {
             number = number + "E";
             screen.setText(number);
+            sign.setDisable(false);
         } else if (targetNumber.equals(fifteen)) {
             number = number + "F";
             screen.setText(number);
+            sign.setDisable(false);
         } else if (targetNumber.equals(decimal)) {
             if(!decimalPicked){
                 number = number + ".";
@@ -154,7 +169,7 @@ public class Controller {
             minus.setDisable(false);
             division.setDisable(false);
         }
-        sign.setDisable(false);
+
         firstBase = inputBase;
         clear.setDisable(false);
 
@@ -515,6 +530,7 @@ public class Controller {
         operatorSelected = false;
         firstNumber = " ";
         disable();
+        sign.setDisable(true);
 
 
     }
