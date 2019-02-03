@@ -100,7 +100,7 @@
         </GridPane>
 
 
-        <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+        <GridPane gridLinesVisible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
             <Button fx:id="seven" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="7" />
             <Button fx:id="eight" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="8" GridPane.columnIndex="1" />
             <Button fx:id="nine" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="9" GridPane.columnIndex="2" />
@@ -113,13 +113,13 @@
             <Button fx:id="zero" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="0" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <Button fx:id="decimal" disable= "true"  mnemonicParsing="false" onAction="#clickNumber" text=" ." GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Button fx:id="equals" disable= "true"  mnemonicParsing="false" onAction="#equals" text="=" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button fx:id="ten" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="A" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-            <Button fx:id="eleven" disable= "true"  mnemonicParsing="false" onAction="#clickNumber" text="B" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-            <Button fx:id="twelve" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="C" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button fx:id="thirteen" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="D" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Button fx:id="fourteen" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="E" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Button fx:id="fifteen" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="F" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Button fx:id="sign" disable= "true" mnemonicParsing="false" onAction="#makeNegative" text="+/-" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button fx:id="ten" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="  A  " GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <Button fx:id="eleven" disable= "true"  mnemonicParsing="false" onAction="#clickNumber" text="  B  " GridPane.columnIndex="4" GridPane.rowIndex="0" />
+            <Button fx:id="twelve" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="  C  " GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button fx:id="thirteen" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="  D  " GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button fx:id="fourteen" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="  E  " GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button fx:id="fifteen" disable= "true" mnemonicParsing="false" onAction="#clickNumber" text="  F  " GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Button fx:id="sign" disable= "true" mnemonicParsing="false" onAction="#makeNegative" text="+/- " GridPane.columnIndex="3" GridPane.rowIndex="3" />
             <Button fx:id="plus" disable= "true" mnemonicParsing="false" onAction="#operate" text="+" GridPane.columnIndex="5" GridPane.rowIndex="0" />
             <Button fx:id="minus" disable= "true" mnemonicParsing="false" onAction="#operate" text="-" GridPane.columnIndex="5" GridPane.rowIndex="1" />
             <Button fx:id="times" disable= "true" mnemonicParsing="false" onAction="#operate" text="x" GridPane.columnIndex="5" GridPane.rowIndex="2" />
@@ -152,6 +152,7 @@
             <Label fx:id="tracker" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="0"> </Label>
             <Label fx:id="operatorLabel" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="1"> </Label>
             <Label fx:id="secondTracker" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1"> </Label>
+            <Label fx:id="answerLabel" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="2"> </Label>
             <columnConstraints>
                 <ColumnConstraints />
                 <ColumnConstraints />
