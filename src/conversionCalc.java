@@ -19,7 +19,9 @@ public class conversionCalc {
 	}
 	
 	public static int[] toArray(String Num) {
+		Num = removeNegative(Num);
 		int[] arr = new int[Num.length()];
+
 		for (int i = 0; i < Num.length(); i++) {
 			if (Num.charAt(i) == 'A' || Num.charAt(i) == 'B' || Num.charAt(i) == 'C' || Num.charAt(i) == 'D'
 					|| Num.charAt(i) == 'E' || Num.charAt(i) == 'F') {
@@ -32,14 +34,7 @@ public class conversionCalc {
 		}
 		return(arr);
 	}
-	
-	public static String toString(int[] n) {
-		String m = "";
-		for (int i = 0; i < n.length;i++) {
-			m += Integer.toString(n[i]);
-		}
-		return(m);
-	}
+
 	public static String toString(char[] n) {
 		String m = "";
 		for (int i = 0; i < n.length;i++) {
@@ -133,9 +128,14 @@ public class conversionCalc {
 	
 	// Converting decimal to desired base. Input MUST be a double in decimal!
 	public static String toBase(double num, int baseOutput) {
+
+		Boolean negative = num < 0;
 		String n = Double.toString(num);
 		int[] x = toArray(n);
-		if (num - (int) num == 0 || findIndex(x, 100) == -1) {
+
+		if(num == 0){
+			return "0";
+		} else if (num - (int) num == 0 || findIndex(x, 100) == -1) {
 			int[] g = new int[findIndex(x, 100)];
 			for (int i = 0; i < g.length;i++) {
 				g[i] = x[i];
@@ -143,6 +143,9 @@ public class conversionCalc {
 			int[] z1 = leftDeciToBase(g, baseOutput);
 			char[] z2 = toHex(z1);
 			String s = toString(z2);
+			if(negative){
+				s = "-" + s;
+			}
 			return(s);
 		}else {
 			int[] x1 = new int[findIndex(x, 100)];
@@ -162,21 +165,23 @@ public class conversionCalc {
 			String a = toString(y3);
 			String b = toString(y4);
 			String r = a + "." +b;
+			if(negative){
+				r = "-" + r;
+			}
+
 			return(r);
 		}
 	}
-	
-	// BASIC METHOD: Takes input and converts it to desired base
-	public static String basicOp(String num, int inputBase, int outputBase) {
-		int[] a = toArray(num);
-		double x = toDeci(a, inputBase);
-		String y = toBase(x, outputBase);
-		return(y);
+
+	public static String removeNegative(String m) {
+		String n = "";
+		for (int i = 0; i < m.length(); i++) {
+			if (m.charAt(i) != '-') {
+				n += m.charAt(i);
+			}
+		}
+		return(n);
 	}
-	
-	public static void main(String[] args) {
-		String s = "0.773";
-		System.out.print(basicOp(s, 8, 5));
-	}
+
 	
 }

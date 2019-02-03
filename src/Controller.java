@@ -45,7 +45,7 @@ public class Controller {
     public Button targetOperator;
     public int inputBase;
     public int outputBase;
-    public String firstNumber;
+    public String firstNumber = " ";
     public int firstBase;
     public String operator = "0";
     public Label tracker;
@@ -492,7 +492,10 @@ public class Controller {
         times.setDisable(true);
         division.setDisable(true);
 
-        answerLabel.setText("= Answer pending");
+        String answer = Logic.math(operator, firstNumber, firstBase, number, inputBase, outputBase, firstSign, negative);
+
+        answerLabel.setText("= (" + answer +")BASE" + outputBase);
+        screen.setText(answer);
 
 
     }
