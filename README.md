@@ -2,6 +2,8 @@
 
 Project submission for McHacks 6 (2019) MLH
 
+<img src="https://github.com/arcaulfield/Calculator/blob/master/BaseCalculatorDemo.png" width="450"/>
+
 ## Inspiration
 Every first year CS student (ourselves included!) struggles with base conversion calculations. We wanted to develop a tool for students to learn and explore base conversions. 
 ## What it does
