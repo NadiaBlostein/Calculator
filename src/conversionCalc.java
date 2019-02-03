@@ -32,14 +32,7 @@ public class conversionCalc {
 		}
 		return(arr);
 	}
-	
-	public static String toString(int[] n) {
-		String m = "";
-		for (int i = 0; i < n.length;i++) {
-			m += Integer.toString(n[i]);
-		}
-		return(m);
-	}
+
 	public static String toString(char[] n) {
 		String m = "";
 		for (int i = 0; i < n.length;i++) {
@@ -164,6 +157,15 @@ public class conversionCalc {
 			String r = a + "." +b;
 			return(r);
 		}
+	}
+	public static String removeNegative(String m) {
+		String n = "";
+		for (int i = 0; i < m.length(); i++) {
+			if (m.charAt(i) != '-') {
+				n += m.charAt(i);
+			}
+		}
+		return(n);
 	}
 	
 	// BASIC METHOD: Takes input and converts it to desired base
