@@ -172,7 +172,10 @@ public class conversionCalc {
 			return(r);
 		}
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 08214268d74bbd8e3f8bef52723df43f80c7ff73
 	public static String removeNegative(String m) {
 		String n = "";
 		for (int i = 0; i < m.length(); i++) {
@@ -181,6 +184,22 @@ public class conversionCalc {
 			}
 		}
 		return(n);
+<<<<<<< HEAD
+=======
+	}
+	
+	// BASIC METHOD: Takes input and converts it to desired base
+	public static String basicOp(String num, int inputBase, int outputBase) {
+		int[] a = toArray(num);
+		double x = toDeci(a, inputBase);
+		String y = toBase(x, outputBase);
+		return(y);
+	}
+	
+	public static void main(String[] args) {
+		String s = "0.773";
+		System.out.print(basicOp(s, 8, 5));
+>>>>>>> 08214268d74bbd8e3f8bef52723df43f80c7ff73
 	}
 
 	
