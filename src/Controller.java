@@ -1,4 +1,3 @@
-package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -59,6 +58,8 @@ public class Controller {
     public Button division;
     public Label operatorLabel;
     public Label secondTracker;
+    public Boolean operatorSelected = false;
+    public Label answerLabel;
 
 
 
@@ -147,11 +148,13 @@ public class Controller {
         one.setDisable(false);
         zero.setDisable(false);
         decimal.setDisable(false);
-        plus.setDisable(false);
-        times.setDisable(false);
+        if(!operatorSelected){
+            plus.setDisable(false);
+            times.setDisable(false);
+            minus.setDisable(false);
+            division.setDisable(false);
+        }
         sign.setDisable(false);
-        minus.setDisable(false);
-        division.setDisable(false);
         firstBase = inputBase;
         clear.setDisable(false);
 
@@ -460,6 +463,7 @@ public class Controller {
         number = "0";
         firstSign = negative;
         negative = false;
+        operatorSelected = true;
     }
 
     public void equals(){
@@ -488,6 +492,9 @@ public class Controller {
         times.setDisable(true);
         division.setDisable(true);
 
+        answerLabel.setText("= Answer pending");
+
+
     }
 
 
@@ -499,9 +506,13 @@ public class Controller {
         tracker.setText(" ");
         operatorLabel.setText(" ");
         secondTracker.setText(" ");
+        answerLabel.setText(" ");
         negative = false;
         firstSign = false;
+        operatorSelected = false;
+        firstNumber = " ";
         disable();
+
 
     }
 
